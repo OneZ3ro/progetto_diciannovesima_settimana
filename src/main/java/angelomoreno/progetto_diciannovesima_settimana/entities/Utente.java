@@ -26,6 +26,7 @@ public class Utente implements UserDetails {
     @Column(name = "persona_id")
     private UUID personaId;
     private String username;
+    private String email;
     private String password;
     private String nome;
     private String cognome;
