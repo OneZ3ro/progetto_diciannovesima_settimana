@@ -26,7 +26,7 @@ public class JWTTools {
         try {
             Jwts.parserBuilder().setSigningKey(Keys.hmacShaKeyFor(segreto.getBytes())).build().parse(token);
         } catch (Exception exception) {
-            throw new UnauthorizedException("Il token non è valido. Fai il login per un nuovo token")
+            throw new UnauthorizedException("Il token non è valido. Fai il login per un nuovo token");
         }
     }
 
