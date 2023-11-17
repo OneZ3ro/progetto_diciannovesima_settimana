@@ -23,6 +23,7 @@ public class Evento {
     private String descrizione;
     private LocalDate data;
     private String luogo;
+    private String img;
     @Column(name = "posti_disponibili")
     private long postiDisponibili;
     @OneToMany(mappedBy = "evento")
