@@ -19,7 +19,7 @@ import java.util.UUID;
 @Table(name = "persone")
 @Getter
 @Setter
-@JsonIgnoreProperties({"password"})
+@JsonIgnoreProperties({"password", "accountNonLocked", "enabled", "authorities", "credentialsNonExpired", "accountNonExpired"})
 public class Utente implements UserDetails {
     @Id
     @GeneratedValue

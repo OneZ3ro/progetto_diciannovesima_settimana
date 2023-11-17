@@ -30,6 +30,7 @@ public class EventoController {
     }
 
     @PostMapping("")
+    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     public Evento creaEvento(@RequestBody @Validated EventoDTO body, BindingResult validation) {
         if (validation.hasErrors()) {

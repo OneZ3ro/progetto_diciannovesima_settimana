@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-
 public interface BigliettoRepository extends JpaRepository<Biglietto, UUID> {
-    Optional<Biglietto> findByBigliettiDisponibili(UUID eventoId);
+//    Optional<Biglietto> findByBigliettiDisponibili(UUID eventoId);
 }

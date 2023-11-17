@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-
 public interface EventoRepository extends JpaRepository<Evento, UUID> {
     Optional<Evento> findByTitolo(String titolo);
     Optional<Evento> findByData(LocalDate data);

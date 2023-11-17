@@ -38,16 +38,16 @@ public class BigliettoService {
         bigliettoRepository.deleteById(id);
     }
 
-    public String impostaUtenteABiglietti(CompraBigliettoDTO body) throws NotFoundException {
-        Utente utente = utenteService.findById(body.utenteId());
-        Evento evento = eventoService.findById(body.eventoId());
-        List<Biglietto> bigliettiDisponibili = evento.getBiglietti().stream().filter(Biglietto::isDisponibile).toList();
-        for (int i = 0; i < body.totBiglietti(); i++) {
-            Biglietto biglietto = bigliettiDisponibili.get(i);
-            biglietto.setDisponibile(false);
-            biglietto.setUtente(utente);
-            bigliettoRepository.save(biglietto);
-        }
-        return body.totBiglietti() + " biglietti salvati correttamente";
-    }
+//    public String impostaUtenteABiglietti(CompraBigliettoDTO body) throws NotFoundException {
+//        Utente utente = utenteService.findById(body.utenteId());
+//        Evento evento = eventoService.findById(body.eventoId());
+//        List<Biglietto> bigliettiDisponibili = evento.getBiglietti().stream().filter(Biglietto::isDisponibile).toList();
+//        for (int i = 0; i < body.totBiglietti(); i++) {
+//            Biglietto biglietto = bigliettiDisponibili.get(i);
+//            biglietto.setDisponibile(false);
+//            biglietto.setUtente(utente);
+//            bigliettoRepository.save(biglietto);
+//        }
+//        return body.totBiglietti() + " biglietti salvati correttamente";
+//    }
 }

@@ -9,14 +9,11 @@ import angelomoreno.progetto_diciannovesima_settimana.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-@RestControllerAdvice
+@RestController
 @RequestMapping("/auth")
 public class AuthController {
     @Autowired
