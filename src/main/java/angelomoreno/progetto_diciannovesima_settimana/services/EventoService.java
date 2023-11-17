@@ -49,7 +49,7 @@ public class EventoService {
         return eventoRepository.findByLuogo(luogo).orElseThrow(() -> new NotFoundException(luogo));
     }
 
-    public Evento saveEvento(EventoDTO body) {
+    public Evento saveEvento(EventoDTO body) throws IOException{
         Evento evento = new Evento();
         evento.setTitolo(body.titolo());
         evento.setDescrizione(body.descrizione());

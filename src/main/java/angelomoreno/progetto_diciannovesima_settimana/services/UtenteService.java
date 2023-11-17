@@ -1,5 +1,7 @@
 package angelomoreno.progetto_diciannovesima_settimana.services;
 
+import angelomoreno.progetto_diciannovesima_settimana.entities.Biglietto;
+import angelomoreno.progetto_diciannovesima_settimana.entities.Evento;
 import angelomoreno.progetto_diciannovesima_settimana.entities.Utente;
 import angelomoreno.progetto_diciannovesima_settimana.exceptions.NotFoundException;
 import angelomoreno.progetto_diciannovesima_settimana.repositories.UtenteRepository;
