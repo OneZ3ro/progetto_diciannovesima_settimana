@@ -12,7 +12,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "eventi")
-@NoArgsConstructor
 @Getter
 @Setter
 public class Evento {
@@ -28,12 +27,4 @@ public class Evento {
     private long postiDisponibili;
     @OneToMany(mappedBy = "evento")
     private List<Biglietto> biglietti;
-
-    public Evento(String titolo, String descrizione, LocalDate data, String luogo, long postiDisponibili) {
-        this.titolo = titolo;
-        this.descrizione = descrizione;
-        this.data = data;
-        this.luogo = luogo;
-        this.postiDisponibili = postiDisponibili;
-    }
 }
