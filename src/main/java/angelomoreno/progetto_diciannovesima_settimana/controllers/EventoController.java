@@ -62,6 +62,7 @@ public class EventoController {
     }
 
     @PostMapping("/{id}/upload")
+    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
     public String uploadFiles(@PathVariable UUID id, @RequestParam("img")MultipartFile body) throws IOException{
         System.out.println(body.getSize());
         System.out.println(body.getContentType());
