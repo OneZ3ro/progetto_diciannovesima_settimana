@@ -23,8 +23,8 @@ import java.util.UUID;
 public class Utente implements UserDetails {
     @Id
     @GeneratedValue
-    @Column(name = "persona_id")
-    private UUID personaId;
+    @Column(name = "utente_id")
+    private UUID utenteId;
     private String username;
     private String email;
     private String password;
