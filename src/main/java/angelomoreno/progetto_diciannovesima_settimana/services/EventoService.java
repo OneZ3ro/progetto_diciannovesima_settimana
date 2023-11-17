@@ -2,6 +2,7 @@ package angelomoreno.progetto_diciannovesima_settimana.services;
 
 import angelomoreno.progetto_diciannovesima_settimana.entities.Evento;
 import angelomoreno.progetto_diciannovesima_settimana.exceptions.NotFoundException;
+import angelomoreno.progetto_diciannovesima_settimana.payloads.entities.EventoDTO;
 import angelomoreno.progetto_diciannovesima_settimana.repositories.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,17 @@ public class EventoService {
 
     public Evento findByLuogo(String luogo) throws NotFoundException {
         return eventoRepository.findByLuogo(luogo).orElseThrow(() -> new NotFoundException(luogo));
+    }
+
+    public Evento saveEvento(EventoDTO body) {
+        Evento evento = new Evento();
+        evento.setTitolo(body.titolo());
+        evento.setDescrizione(body.descrizione());
+        evento.setImg(body.img());
+        evento.setData(body.data());
+        evento.setLuogo(body.luogo());
+        evento.setPostiDisponibili(body.postiDisponibili());
+        return eventoRepository.save(evento);
     }
 
     public Evento modificaEvento(UUID id, Evento body) throws NotFoundException {

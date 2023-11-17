@@ -9,6 +9,8 @@ public record EventoDTO(
         @NotEmpty(message = "Il titolo è obbligatorio")
         @Size(min = 5, max = 50, message = "Il titolo deve avere tra i 5 e 50 caratteri")
         String titolo,
+        String descrizione,
+        String img,
         @NotEmpty(message = "La data è obbligatoria")
         LocalDate data,
         @NotEmpty(message = "Il titolo è obbligatorio")
