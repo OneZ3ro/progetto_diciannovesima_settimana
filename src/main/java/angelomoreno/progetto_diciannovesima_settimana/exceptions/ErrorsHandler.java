@@ -18,7 +18,7 @@ public class ErrorsHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorsWithListDTO handlerBadRequest(BadRequestException exception) {
         if (exception.getErrorList() != null) {
-            List<String> errorList = exception.getErrorList().stream().map(objectError -> objectError.getDefaultMessage()).toList()
+            List<String> errorList = exception.getErrorList().stream().map(objectError -> objectError.getDefaultMessage()).toList();
             return new ErrorsWithListDTO(exception.getMessage(), new Date(), errorList);
         } else {
             return new ErrorsWithListDTO(exception.getMessage(), new Date(), new ArrayList<>());

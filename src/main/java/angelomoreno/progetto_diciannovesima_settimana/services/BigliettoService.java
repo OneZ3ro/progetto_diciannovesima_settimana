@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,6 +25,10 @@ public class BigliettoService {
 
     public Biglietto findById(UUID id) throws NotFoundException {
         return bigliettoRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
+    }
+
+    public List<Biglietto> bigliettiDisponibili(UUID eventoID) {
+        return bigliettoRepository.findByBigliettiDisponibili(eventoID).stream().filter(Biglietto::isDisponibile).toList();
     }
 
     public void eliminaBiglietto(UUID id) throws NotFoundException {

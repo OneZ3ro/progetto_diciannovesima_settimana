@@ -19,9 +19,6 @@ public class UtenteService {
     @Autowired
     private UtenteRepository utenteRepository;
 
-    @Autowired
-    private Cloudinary cloudinary;
-
     public Page<Utente> getUtenti(int page, int size, String orderBy) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(orderBy));
         return utenteRepository.findAll(pageable);

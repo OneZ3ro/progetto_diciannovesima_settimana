@@ -16,10 +16,11 @@ public class Biglietto {
     @GeneratedValue
     @Column(name = "biglietto_id")
     private UUID bigliettoId;
-    @ManyToOne
-    @JoinColumn(name = "utente_id", nullable = false)
-    private Utente utente;
+    private boolean disponibile;
     @ManyToOne
     @JoinColumn(name = "evento_id", nullable = false)
     private Evento evento;
+    @ManyToOne
+    @JoinColumn(name = "utente_id")
+    private Utente utente;
 }
