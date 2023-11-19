@@ -17,11 +17,11 @@ public record UtenteDTO(
         @NotEmpty(message = "La password è obbligatoria")
         String password,
         @NotEmpty(message = "Il nome è obbligatorio")
-        @Size(min = 5, max = 50, message = "Il nome deve avere tra i 5 e 50 caratteri")
+        @Size(min = 3, max = 30, message = "Il nome deve avere tra i 3 e 30 caratteri")
         String nome,
         @NotEmpty(message = "Il cognome è obbligatorio")
         @Size(min = 5, max = 50, message = "Il cognome deve avere tra i 5 e 50 caratteri")
         String cognome,
-        @NotNull
+        @NotNull(message = "La data di nascita è obbligatoria")
         LocalDate dataDiNascita
 ) {}

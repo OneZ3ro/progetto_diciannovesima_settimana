@@ -1,6 +1,7 @@
 package angelomoreno.progetto_diciannovesima_settimana.payloads.entities;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -11,11 +12,11 @@ public record EventoDTO(
         String titolo,
         String descrizione,
         String img,
-        @NotEmpty(message = "La data è obbligatoria")
+        @NotNull(message = "La data è obbligatoria")
         LocalDate data,
         @NotEmpty(message = "Il titolo è obbligatorio")
         @Size(min = 3, max = 30, message = "Il luogo deve avere tra i 3 e 30 caratteri")
         String luogo,
-        @NotEmpty(message = "I posti disponibili è obbligatorio")
+        @NotNull(message = "I posti disponibili è obbligatorio")
         long postiDisponibili
 ) {}

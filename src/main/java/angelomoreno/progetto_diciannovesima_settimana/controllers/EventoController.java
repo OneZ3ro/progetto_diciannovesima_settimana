@@ -30,7 +30,7 @@ public class EventoController {
     }
 
     @PostMapping("")
-    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     public Evento creaEvento(@RequestBody @Validated EventoDTO body, BindingResult validation) {
         if (validation.hasErrors()) {
@@ -50,20 +50,20 @@ public class EventoController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'ADMIN')")
     public Evento modificaEvento(@PathVariable UUID id, @RequestBody Evento body) {
         return eventoService.modificaEvento(id, body);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminaEvento(@PathVariable UUID id) {
         eventoService.eliminaEvento(id);
     }
 
     @PostMapping("/{id}/upload")
-    @PreAuthorize("hasAuthority('ORGANIZZATORE', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'ADMIN')")
     public String uploadFiles(@PathVariable UUID id, @RequestParam("img")MultipartFile body) throws IOException{
         System.out.println(body.getSize());
         System.out.println(body.getContentType());

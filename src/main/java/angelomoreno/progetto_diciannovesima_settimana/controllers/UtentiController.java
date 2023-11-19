@@ -42,19 +42,19 @@ public class UtentiController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public Utente findById(@PathVariable UUID id) {
         return utenteService.findById(id);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public Utente modificaUtente(@PathVariable UUID id, @RequestBody Utente body) {
         return utenteService.modificaUtente(id, body);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminaUtente(@PathVariable UUID id) {
         utenteService.eliminaUtente(id);

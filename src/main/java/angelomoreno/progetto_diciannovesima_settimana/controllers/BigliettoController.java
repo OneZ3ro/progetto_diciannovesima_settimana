@@ -33,7 +33,7 @@ public class BigliettoController {
     public Biglietto getBigliettoById(@PathVariable UUID id) { return bigliettoService.findById(id); }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN', 'ORGANIZZATORE')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'ORGANIZZATORE')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminaBiglietto(@PathVariable UUID id) {
         bigliettoService.eliminaBiglietto(id);
