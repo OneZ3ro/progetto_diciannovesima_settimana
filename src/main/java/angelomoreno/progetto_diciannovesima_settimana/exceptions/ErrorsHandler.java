@@ -37,6 +37,12 @@ public class ErrorsHandler {
         return new ErrorsDTO(exception.getMessage(), new Date());
     }
 
+    @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+    @ResponseStatus(HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+    public ErrorsDTO handleBigliettiArrayIndexOutOfBounds(ArrayIndexOutOfBoundsException exception) {
+        return new ErrorsDTO("I biglietti che vuoi comprare superano i biglietti disponibili!", new Date());
+    }
+
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorsDTO handleNotFound(NotFoundException exception) {

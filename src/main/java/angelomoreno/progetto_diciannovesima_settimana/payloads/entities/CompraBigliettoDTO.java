@@ -1,15 +1,16 @@
 package angelomoreno.progetto_diciannovesima_settimana.payloads.entities;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.UUID;
 
 public record CompraBigliettoDTO(
-        @NotEmpty(message = "Devi mettere una quantità di biglietti che vuoi comprare")
+        @NotNull(message = "Devi mettere una quantità di biglietti che vuoi comprare")
         int totBiglietti,
-        @NotEmpty(message = "Devi passare l'id dell'utente")
+        @NotNull(message = "Devi passare l'id dell'utente")
         UUID utenteId,
-        @NotEmpty(message = "Devi passare l'id dell'evento")
+        @NotNull(message = "Devi passare l'id dell'evento")
         UUID eventoId
 ) {
 }

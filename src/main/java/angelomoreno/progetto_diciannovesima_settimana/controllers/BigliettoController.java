@@ -39,8 +39,8 @@ public class BigliettoController {
         bigliettoService.eliminaBiglietto(id);
     }
 
-//    @PostMapping("/compra")
-//    public CompraBigliettoSuccessDTO impostaUtenteABiglietti(@RequestBody @Validated CompraBigliettoDTO body) {
-//        return new CompraBigliettoSuccessDTO(bigliettoService.impostaUtenteABiglietti(body));
-//    }
+    @PostMapping("/compra")
+    public CompraBigliettoSuccessDTO impostaUtenteABiglietti(@RequestBody @Validated CompraBigliettoDTO body) {
+        return new CompraBigliettoSuccessDTO(bigliettoService.impostaUtenteABiglietti(body));
+    }
 }
